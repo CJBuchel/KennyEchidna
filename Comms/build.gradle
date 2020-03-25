@@ -1,0 +1,27 @@
+plugins {
+	id 'cpp'
+}
+
+model {
+  components {
+    comms(NativeExecutableSpec) {
+      sources {
+				cpp {
+					source {
+						srcDirs "src/main/cpp", "src/libs/", "TCPComms/src/main/cpp"
+						include "**/*.cpp", "**/*.c"
+					}
+					exportedHeaders {
+						srcDirs "src/main/include", "src/libs/", "TCPComms/src/main/include"
+					}
+				}
+      }
+
+			binaries.all {
+				cppCompiler.args '-pthread'
+        linker.args '-lpthread'
+			}
+
+    }
+  }
+}
