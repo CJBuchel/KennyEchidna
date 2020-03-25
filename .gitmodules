@@ -1,0 +1,3 @@
+[submodule "TCPComms"]
+	path = Comms/TCPComms
+	url = https://github.com/A-Loose-Screw/TCPComms.git

@@ -1,0 +1,2 @@
+rootProject.name = 'Kenny'
+include 'Comms'

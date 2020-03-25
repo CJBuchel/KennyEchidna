@@ -1,0 +1,14 @@
+plugins {
+	id 'cpp'
+}
+
+model {
+  components {
+  	kenny(NativeExecutableSpec) {
+			binaries.all {
+				cppCompiler.args '-pthread'
+        linker.args '-lpthread'
+			}
+    }
+  }
+}
