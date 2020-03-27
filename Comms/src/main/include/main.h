@@ -1,3 +1,3 @@
-#include <iostream>
-#include <string>
-#include "mongoose/mongoose.h"
+// Local files
+#include "CommController.h"
+CommController commControl;
