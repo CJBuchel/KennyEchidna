@@ -1,4 +1,5 @@
 #include "webServer.h"
+#include "tcpClient.h"
 
 class CommController {
  public:
@@ -7,4 +8,5 @@ class CommController {
   // Main instances
   Comms comms;
   WebServer webServer;
+  tcpClient client;
 };

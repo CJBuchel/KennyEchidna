@@ -1,8 +1,11 @@
 #pragma once
 enum class CommState {
   ACTIVE = 0,
-  CONNECTING,
-  CON_FAULT,
+  STARTING,
+  CONNECTING_UI,
+  CONNECTING_TCP,
+  UI_FAULT,
+  TCP_FAULT,
   STOPPED
 };
 
@@ -17,5 +20,5 @@ class Comms {
   }
   
   // State of comms
-  CommState commState{ CommState::CONNECTING };
+  CommState commState{ CommState::STARTING };
 };

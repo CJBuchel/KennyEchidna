@@ -29,7 +29,7 @@ int initServer(int port, Comms *comms) {
   // if con fail
   if (nc == NULL) {
     printf("\n Failed to create listener \n");
-    comms->SetCommState(CommState::CON_FAULT);
+    comms->SetCommState(CommState::UI_FAULT);
     std::terminate();
   }
 
@@ -39,7 +39,7 @@ int initServer(int port, Comms *comms) {
   s_http_server_opts.enable_directory_listing = "yes";
 
   while (comms->GetState() != CommState::STOPPED) {
-    if (comms->GetState() == CommState::CON_FAULT) {
+    if (comms->GetState() == CommState::UI_FAULT) {
       break;
     } else {
       mg_mgr_poll(&mgr, 1000);

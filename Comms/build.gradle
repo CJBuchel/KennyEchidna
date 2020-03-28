@@ -21,7 +21,6 @@ model {
 				cppCompiler.args '-pthread'
         linker.args '-lpthread'
 			}
-
     }
   }
 }
